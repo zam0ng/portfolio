@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.e0c54fc9.css",
-    "main.js": "/portfolio/static/js/main.20fdcf52.js",
+    "main.css": "/portfolio/static/css/main.4aa68ed7.css",
+    "main.js": "/portfolio/static/js/main.6213ea18.js",
     "static/js/787.35dd0f9c.chunk.js": "/portfolio/static/js/787.35dd0f9c.chunk.js",
     "static/media/bounceTokenMint.gif": "/portfolio/static/media/bounceTokenMint.a84d1d13249dad4419db.gif",
     "static/media/bounceTrade.gif": "/portfolio/static/media/bounceTrade.c59b94c9928eb1354344.gif",
+    "static/media/RIDIBatang.otf": "/portfolio/static/media/RIDIBatang.80d8670ccc62e22c4612.otf",
     "static/media/najakjak.png": "/portfolio/static/media/najakjak.35924a9d45d3cbda2447.png",
     "static/media/nobroker.png": "/portfolio/static/media/nobroker.bdfd6f71783190f8d62c.png",
     "static/media/pdfkit.gif": "/portfolio/static/media/pdfkit.6b70fcafefe5db8c1247.gif",
@@ -27,12 +28,12 @@
     "static/media/order.png": "/portfolio/static/media/order.9f8ac7a2f4c8bd48dcb1.png",
     "static/media/chartjs.png": "/portfolio/static/media/chartjs.68a16205381c57e8f38b.png",
     "index.html": "/portfolio/index.html",
-    "main.e0c54fc9.css.map": "/portfolio/static/css/main.e0c54fc9.css.map",
-    "main.20fdcf52.js.map": "/portfolio/static/js/main.20fdcf52.js.map",
+    "main.4aa68ed7.css.map": "/portfolio/static/css/main.4aa68ed7.css.map",
+    "main.6213ea18.js.map": "/portfolio/static/js/main.6213ea18.js.map",
     "787.35dd0f9c.chunk.js.map": "/portfolio/static/js/787.35dd0f9c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0c54fc9.css",
-    "static/js/main.20fdcf52.js"
+    "static/css/main.4aa68ed7.css",
+    "static/js/main.6213ea18.js"
   ]
 }
