@@ -12,7 +12,7 @@ function App() {
                 {/* profile */}
                 <Profile />
                 {/* introduce */}
-                <Introduce />
+                <Introduce/>
 
                 {/* Project Experience */}
                 <Projects />

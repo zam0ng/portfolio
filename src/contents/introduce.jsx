@@ -14,7 +14,7 @@ const Introduce = () => {
         >
             <div className="flex flex-col gap-[16px] w-full items-center">
             <div className='-ml-52 text-3xl font-bold'>About me</div>
-                <div className="text-left text-[16px] md:text-[24px] ml-80">
+                <div className="text-left text-[16px] md:text-[24px] ml-80 font-ridi">
                     <ul className="px-[32px] leading-8 list-disc list-outside text-[12px] md:text-[16px]">
                         <li>안녕하세요 ! 신입 블록체인 개발자 이재영입니다.</li>
                         <li>긍정적인 성격으로 배움에 두려움이 없으며, 

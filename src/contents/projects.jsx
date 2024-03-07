@@ -20,7 +20,7 @@ const Projects = () => {
         <Wrapper>
             <Heading>프로젝트</Heading>
 
-            <ul className="flex flex-col w-full gap-[120px]">
+            <ul className="flex flex-col w-full gap-[120px] font-ridi">
                 {/* 기업협업 프로젝트 STO 부동산 */}
                 <li className="flex flex-col gap-[32px] md:flex-row">
                     <div className="w-full md:w-[420px] ">
