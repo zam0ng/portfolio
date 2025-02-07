@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.4aa68ed7.css",
-    "main.js": "/portfolio/static/js/main.42f7b824.js",
+    "main.css": "/portfolio/static/css/main.39b981fa.css",
+    "main.js": "/portfolio/static/js/main.0615b278.js",
     "static/js/787.35dd0f9c.chunk.js": "/portfolio/static/js/787.35dd0f9c.chunk.js",
     "static/media/bounceTokenMint.gif": "/portfolio/static/media/bounceTokenMint.a84d1d13249dad4419db.gif",
     "static/media/bounceTrade.gif": "/portfolio/static/media/bounceTrade.c59b94c9928eb1354344.gif",
@@ -28,12 +28,12 @@
     "static/media/order.png": "/portfolio/static/media/order.9f8ac7a2f4c8bd48dcb1.png",
     "static/media/chartjs.png": "/portfolio/static/media/chartjs.68a16205381c57e8f38b.png",
     "index.html": "/portfolio/index.html",
-    "main.4aa68ed7.css.map": "/portfolio/static/css/main.4aa68ed7.css.map",
-    "main.42f7b824.js.map": "/portfolio/static/js/main.42f7b824.js.map",
+    "main.39b981fa.css.map": "/portfolio/static/css/main.39b981fa.css.map",
+    "main.0615b278.js.map": "/portfolio/static/js/main.0615b278.js.map",
     "787.35dd0f9c.chunk.js.map": "/portfolio/static/js/787.35dd0f9c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4aa68ed7.css",
-    "static/js/main.42f7b824.js"
+    "static/css/main.39b981fa.css",
+    "static/js/main.0615b278.js"
   ]
 }
