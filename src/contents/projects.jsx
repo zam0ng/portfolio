@@ -18,7 +18,10 @@ const Projects = () => {
 
     return (
         <Wrapper>
-            <Heading>프로젝트</Heading>
+            <div className='flex items-baseline'>
+                <Heading>PROJECT</Heading>
+                <span className='ml-3 text-gray-500'>(총 4개)</span>
+            </div>
 
             <ul className="flex flex-col w-full gap-[120px] font-ridi">
                 {/* 기업협업 프로젝트 STO 부동산 */}

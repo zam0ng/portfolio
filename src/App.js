@@ -4,6 +4,7 @@ import Introduce from './contents/introduce'
 import Projects from './contents/projects'
 import Skills from './contents/skills'
 import Footer from './contents/footer'
+import Career from './contents/career'
 
 function App() {
     return (
@@ -14,6 +15,8 @@ function App() {
                 {/* introduce */}
                 <Introduce/>
 
+                <Career/>
+                
                 {/* Project Experience */}
                 <Projects />
 
