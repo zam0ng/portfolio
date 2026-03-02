@@ -1,19 +1,103 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { Heading, Wrapper } from '../components/common'
 import { BiDownArrow, BiDownArrowAlt, BiDownArrowCircle, BiSolidDownArrow, BiSolidDownArrowCircle, BiUpArrow } from 'react-icons/bi'
+
+// 경력 기간 데이터 (YYYY.MM 형식) — 표시되는 경력과 동기화
+const CAREER_PERIODS = [
+    { start: '2025.07', end: '2025.11' },
+    { start: '2024.10', end: '2024.11' },
+    { start: '2024.03', end: '2024.09' },
+    { start: '2024.01', end: '2024.03' },
+]
+
+const parsePeriod = (dateStr) => {
+    const [y, m] = dateStr.trim().split('.').map(Number)
+    return { year: y, month: m || 1 }
+}
+
+const monthsBetween = (startStr, endStr) => {
+    const s = parsePeriod(startStr)
+    const e = parsePeriod(endStr)
+    return (e.year - s.year) * 12 + (e.month - s.month) + 1
+}
+
+const formatTotalDuration = (totalMonths) => {
+    const years = Math.floor(totalMonths / 12)
+    const months = totalMonths % 12
+    if (years === 0) return `총 ${months}개월`
+    if (months === 0) return `총 ${years}년`
+    return `총 ${years}년 ${months}개월`
+}
 
 const Career = () => {
 
     const [isArrowPopup,setIsArrowPopup] = useState(true);
     const [isArrowPopup2,setIsArrowPopup2] = useState(true);
     const [isArrowPopup3,setIsArrowPopup3] = useState(true);
+    const [isArrowPopup4,setIsArrowPopup4] = useState(true);
+
+    const totalDurationText = useMemo(() => {
+        const totalMonths = CAREER_PERIODS.reduce(
+            (sum, { start, end }) => sum + monthsBetween(start, end),
+            0
+        )
+        return formatTotalDuration(totalMonths)
+    }, [])
 
     return (
         <Wrapper>
             <div className='flex items-baseline'>
                 <Heading>EXPERIENCE</Heading>
-                <span className='ml-3 text-gray-500'>(총 11개월)</span>
+                <span className='ml-3 text-gray-500'>({totalDurationText})</span>
             </div>
+
+            <li className="flex flex-col gap-[32px] md:flex-row font-ridi">
+
+                <div className="w-full mt-2 mb-2">
+                    <h2 className="flex flex-row items-center gap-[8px] text-[16px] text-slate-800 md:text-black md:text-[24px] font-semibold">
+                        2025.07 ~ 2025.11 / ㈜태성에이치에스 - 풀스택 개발자 <span className="text-lg" onClick={()=>{setIsArrowPopup4(!isArrowPopup4)}}> {isArrowPopup4 ? <BiDownArrow/> : <BiUpArrow/>}</span>
+                    </h2>
+                    {
+                        !isArrowPopup4 ?
+                    
+                        <div className='ml-1'>
+                            <p className="leading-5 text-slate-950 text-[12px] md:text-[16px] md:leading-7 italic text-gray-400">
+                                분양 매칭 플랫폼 서버·DB·백엔드 구성 및 개발 
+                            </p>
+
+                            <ul className="px-[32px] leading-8 list-disc list-outside text-[12px] md:text-[16px] ml-3">
+
+                                <li> 서버 환경
+                                    <br /> - GCP Cloud Run 테스트 환경 구축 (고정 IP, 라우트 설정 등)
+                                </li>
+                                <li> 백엔드 (Node.js)
+                                    <br /> - Busyboy 파일 업로드 구현
+                                    <br /> - NiceAPI 사용 Pass 패스인증 구현
+                                    <br /> - 외부 결제서비스 기능 추가 및 유지보수
+                                    <br /> - 앱 서비스 전체 백엔드 API 설계·구성 및 문서화
+                                    <br /> - 알림톡 서비스 기능 구현
+                                    <br /> - Firebase 커스텀 토큰 / 소셜 로그인 구현
+                                    <br /> - 050 안심번호 서비스 기능 구현
+                                    <br /> - Cloud Run 스케줄러 활용 스케줄 기능 구현
+                                </li>
+                                <li> 프론트엔드 (Vue.js)
+                                    <br /> - 메인 랜딩페이지 작업
+                                    <br /> - Chart.js로 관리자 통계 페이지 구성
+                                    <br /> - URL 링크 파라미터를 통한 레퍼럴 링크 통계 페이지 구성
+                                </li>
+                                <li>
+                                    사용 스택
+                                    <br /> - Node.js, Vue.js, Firebase, GCP Cloud Run
+                                </li>
+
+                            </ul>
+                        </div>
+                        :<></>
+                    }
+                </div>
+            </li>
+
+            <hr></hr>
 
             <li className="flex flex-col gap-[32px] md:flex-row font-ridi">
 
@@ -57,7 +141,7 @@ const Career = () => {
 
                 <div className="w-full mt-2 mb-2">
                     <h2 className="flex flex-row items-center gap-[8px] text-[16px] text-slate-800 md:text-black md:text-[24px] font-semibold">
-                        2024.03 ~ 2024.09 / 코싸인온㈜<span className="text-lg" onClick={()=>{setIsArrowPopup2(!isArrowPopup2)}}> {isArrowPopup2 ? <BiDownArrow/> : <BiUpArrow/>}</span>
+                        2024.03 ~ 2024.09 / 코싸인온㈜ - 풀스택 개발자<span className="text-lg" onClick={()=>{setIsArrowPopup2(!isArrowPopup2)}}> {isArrowPopup2 ? <BiDownArrow/> : <BiUpArrow/>}</span>
                     </h2>
                     {
                         !isArrowPopup2 ?
