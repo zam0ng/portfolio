@@ -4,6 +4,7 @@ import { BiDownArrow, BiDownArrowAlt, BiDownArrowCircle, BiSolidDownArrow, BiSol
 
 // 경력 기간 데이터 (YYYY.MM 형식) — 표시되는 경력과 동기화
 const CAREER_PERIODS = [
+    { start: '2026.02', end: null },
     { start: '2025.07', end: '2025.11' },
     { start: '2024.10', end: '2024.11' },
     { start: '2024.03', end: '2024.09' },
@@ -17,7 +18,10 @@ const parsePeriod = (dateStr) => {
 
 const monthsBetween = (startStr, endStr) => {
     const s = parsePeriod(startStr)
-    const e = parsePeriod(endStr)
+    const now = new Date()
+    const e = endStr
+        ? parsePeriod(endStr)
+        : { year: now.getFullYear(), month: now.getMonth() + 1 }
     return (e.year - s.year) * 12 + (e.month - s.month) + 1
 }
 
@@ -32,6 +36,7 @@ const formatTotalDuration = (totalMonths) => {
 const Career = () => {
 
     const [isArrowPopup,setIsArrowPopup] = useState(true);
+    const [isArrowPopup5,setIsArrowPopup5] = useState(false);
     const [isArrowPopup2,setIsArrowPopup2] = useState(true);
     const [isArrowPopup3,setIsArrowPopup3] = useState(true);
     const [isArrowPopup4,setIsArrowPopup4] = useState(true);
@@ -50,6 +55,46 @@ const Career = () => {
                 <Heading>EXPERIENCE</Heading>
                 <span className='ml-3 text-gray-500'>({totalDurationText})</span>
             </div>
+
+            <li className="flex flex-col gap-[32px] md:flex-row font-ridi">
+
+                <div className="w-full mt-2 mb-2">
+                    <h2 className="flex flex-row items-center gap-[8px] text-[16px] text-slate-800 md:text-black md:text-[24px] font-semibold">
+                        2026.02 ~ / 하이소프트 - 대표 및 개발자 <span className="text-lg" onClick={()=>{setIsArrowPopup5(!isArrowPopup5)}}> {isArrowPopup5 ? <BiDownArrow/> : <BiUpArrow/>}</span>
+                    </h2>
+                    {
+                        !isArrowPopup5 ?
+
+                        <div className='ml-1'>
+                            <p className="leading-5 text-slate-950 text-[12px] md:text-[16px] md:leading-7 italic text-gray-400">
+                                자체 서비스 운영 및 외주 프로젝트 기획·개발
+                            </p>
+
+                            <ul className="px-[32px] leading-8 list-disc list-outside text-[12px] md:text-[16px] ml-3">
+
+                                <li> 자체 서비스 운영
+                                    <br /> - hisoft.ai.kr 기획·개발 및 운영
+                                    <br /> - gubaram.gg 기획·개발 및 운영
+                                </li>
+                                <li> 외주 프로젝트
+                                    <br /> - 매칭 플랫폼 앱 전체 서비스 프론트엔드·백엔드 개발
+                                    <br /> - 자동차 배경 커스텀 서비스 웹 개발
+                                    <br /> - 해외 바이어 · 국내 판매자 대상 중고차 거래 서비스 웹 개발
+                                    <br /> - 건축사무소 웹사이트 리뉴얼
+                                </li>
+                                <li>
+                                    사용 스택
+                                    <br /> - React, Next.js, Node.js, Flutter, GCP
+                                </li>
+
+                            </ul>
+                        </div>
+                        :<></>
+                    }
+                </div>
+            </li>
+
+            <hr></hr>
 
             <li className="flex flex-col gap-[32px] md:flex-row font-ridi">
 
